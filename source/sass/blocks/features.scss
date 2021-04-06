@@ -1,0 +1,116 @@
+.features {
+    margin-top: 29px;
+    padding-bottom: 42px;
+    &__title {
+        text-align: left;
+    }
+    &__list {
+        margin-top: 38px;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+    &__item {
+        position: relative;
+        padding-left: 80px;
+        list-style-type: none;
+        font-family: $second-font-family;
+        font-size: 14px;
+        line-height: 18px;
+        color: $special_dark-grey;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-color: $basic_green;
+            background-size: 50px 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &--healthy {
+            &::after {
+              background-image: url("../img/advantage-leaf@1x.png");
+            }
+        }
+        &--simply {
+            &::after {
+              background-image: url("../img/advantage-powder@1x.png");
+            }
+        }
+        &--economic {
+            &::after {
+              background-image: url("../img/advantage-dining@1x.png");
+            }
+        }
+        &--quickly {
+            &::after {
+              background-image: url("../img/advantage-clock@1x.png");
+            }
+        }
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .features {
+        &__title {
+            font-size: 60px;
+            line-height: 60px;
+        }
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 60px;
+            row-gap: 37px;
+            counter-reset: feature-number;
+        }
+        &__item {
+            padding: 152px 75px 40px 0;
+            &::after {
+                top: 40px;
+                width: 80px;
+                height: 80px;
+            }
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 78px;
+                content: counter(feature-number);
+                counter-increment: feature-number;
+                display: block;
+                min-width: 130px;
+                height: 280px;
+                color: $basic_grey;
+                font-size: 280px;
+                line-height: 280px;
+                z-index: -1;
+                font-family: $main-font-family;
+                font-size: 280px;
+                line-height: 280px;
+                color: #f2f2f2;
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .features {
+        margin-top: 71px;
+        padding-bottom: 0;
+        &__list {
+            grid-template-columns: repeat(4,1fr);
+            column-gap: 80px;
+        }
+        &__item:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,307 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    &__group {
+        padding: 0;
+        border: 0;
+    }
+    &__group--bordered {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 20px;
+        border-top: 1px solid #D9D9D9;
+        border-bottom: 1px solid #D9D9D9;
+    }
+    &__group--no-title {
+        margin-bottom: 27px;
+    }
+    &__group--title {
+        margin-top: 27px;
+    }
+    &__options-list--col {
+        margin-top: 34px;
+    }
+    &__title {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 16px;
+            left: 0;
+            height: 2px;
+            width: 100vw;
+            background-color: $basic_green;
+            z-index: -1;
+        }
+        &::after {
+            content: '';
+            display: none;
+            position: absolute;
+            top: 16px;
+            right: 0;
+            height: 2px;
+            width: 100vw;
+            background-color: $basic_green;
+            z-index: -1;
+        }
+    }
+    
+    &__fields-list {
+        display: flex;
+        margin-top: 40px;
+    }
+    &__fields-list--column {
+        flex-direction: column;
+    }
+    &__field-name, 
+    &__input {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $special_dark-grey;
+    }
+    &__input {
+        padding: 14px;
+        width: 100%;
+    }
+    
+    &__field-name {
+        flex-shrink: 0;
+        margin-right: 14px;
+    }
+    &__labeled-field {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        margin-top: 14px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &__options-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__options-item {
+        margin-bottom: 27px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__option {
+        font-size: 16px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $special_dark-grey-2;
+    }
+    &__option--checkbox {
+        position: relative;
+        padding-left: 46px;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: inline-block;
+            content: '';
+            width: 30px;
+            height: 30px;
+            border: 1px solid #CDCDCD;
+        }
+    }
+    &__submit-btn {
+        border: none;
+        width: 100%;
+    }
+    &__remark {
+        display: block;
+        margin-top: 21px;
+    }
+    &__input--textarea {
+        // display: block;
+        min-height: 150px;
+        max-width: 100%;
+        padding: 13px 12px 13px 15px;
+        resize: none;
+    }
+    &__submit {
+        display: flex;
+        flex-direction: column;
+        margin-top: 34px;
+    }
+}
+
+.form__options-list input[type="checkbox"]:checked + .form__option--checkbox::after{
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 14px;
+    background: url('../img/icon-tick.svg') center center/cover no-repeat;
+
+}
+
+.form__option--radio {
+    position: relative;
+    padding-left: 45px;
+    &::after {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 1px solid #CDCDCD;
+    }
+}
+
+.form__options-list input[type="radio"]:checked + .form__option--radio::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: $basic_green;
+}
+
+
+//пробую зробити іконку на input. Чомусь не прописується background-image
+input[type="email"] {
+    position: relative;
+    &::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 14px;
+        background-image: url('../../img/icon-mail.svg') center center/cover no-repeat;
+        background-color: red;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .form {
+        &__group--bordered {
+            margin-left: 0;
+            margin-right: 0;
+            padding: 30px;
+            border-top: 1px solid #D9D9D9;
+            border-bottom: 1px solid #D9D9D9;
+            border-left: 1px solid #D9D9D9;
+            border-right: 1px solid #D9D9D9;
+        }
+        &__field-name, 
+        &__input {
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 30px;
+            text-transform: uppercase;
+            color: $special_dark-grey;
+        }
+        &__title {
+            margin-left: -38px;
+            &::before {
+                top: 23px;
+            }
+            &::after {
+                display: inline-block;
+                top: 23px;
+            }
+        }
+        &__option {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        &__options-list--col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            column-gap: 64px;
+            row-gap: 32px;
+        }
+        &__submit {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 54px;
+        }
+        &__submit-btn {
+            width: calc(50% - 30px);
+        }
+        &__remark {
+            margin-top: 0;
+            width: calc(50% - 30px);
+        }
+        &__labeled-field {
+            margin-top: 20px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    .form__option--radio {
+        padding-left: 60px;
+        &::after {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .form__options-list input[type="radio"]:checked + .form__option--radio::before {
+        top: 5px;
+        left: 12px;;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__group {
+            width: 100%;
+        }
+        &__group--half {
+            width: calc(50% - 40px);
+        }
+        &__fields-list--row {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__labeled-field--row {
+            display: flex;
+            align-items: center;
+            width: calc(50% - 40px);
+        }
+        &__field-name {
+            margin-right: 20px;
+        }
+        &__submit {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 54px;
+            width: 100%;
+        }
+        &__submit-btn {
+            width: calc(50% - 40px);
+        }
+        &__remark {
+            width: calc(50% - 40px);
+        }
+    }
+}

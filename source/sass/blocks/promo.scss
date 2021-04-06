@@ -1,0 +1,114 @@
+.promo {
+    position: relative;
+    min-height: 480px;
+    padding-top: 27px;
+    &__title {
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+    }
+    &__img-bg {
+        display: block;
+        margin: 0 auto;
+    }
+    &__bg-green {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $basic_green_2;
+        width: 100%;
+        z-index: -1;
+    }
+    &__img {
+        display: block;
+        margin: 0 auto;
+    }
+    &__subtitle {
+        font-size: 14px;
+        line-height: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        font-weight: normal;
+        margin-top: 25px;
+    }
+    &__btn {
+        display: block;
+        width: 100%;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .promo {
+        padding-top: 62px;
+        &__title {
+            margin-left: 87px;
+            text-align: left;
+            font-weight: normal;
+            font-size: 60px;
+            line-height: 60px;
+            color: #000000;
+        }
+        &__img-bg {
+            display: none;
+        }
+        &__bg-green {
+            background-color: transparent;
+        }
+        &__img-picture {
+            z-index: -1;
+        }
+        &__img {
+            margin-top: 20px;
+            width: 709px;
+            height: 609px;
+            z-index: -1;
+        }
+        &__subtitle {
+            font-size: 20px;
+            line-height: 20px;
+            color: #000000;
+            text-align: left;
+            margin-left: 87px;
+        }
+        &__btn {
+            position: absolute;
+            left: 137px;
+            top: 266px;
+            width: 244px;
+            padding: 14px 26px;
+            font-size: 20px;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .promo {
+        padding-top: 111px;
+        &__img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            width: 552px;
+            height: 499px;
+        }
+        &__title {
+            margin-left: 80px;
+        }
+        &__subtitle {
+            margin-left: 80px;
+        }
+        &__btn {
+            position: relative;
+            margin-left: 80px;
+            left: 0;
+            top: 52px;
+        }
+    }
+}

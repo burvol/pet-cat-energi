@@ -1,0 +1,34 @@
+.title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 24px;
+    line-height: 24px;
+    color: $color-black;
+    font-weight: 400;
+    padding-right: 22px;
+    background-color: #fff;
+}
+
+.subtitle__bottom {
+    display: block;
+    
+}
+
+@media (min-width: $tablet-width) {
+    .subtitle {
+        font-size: 36px;
+        line-height: 36px;
+        padding-right: 38px;
+        padding-left: 38px;
+    }
+    .subtitle__bottom {
+        display: inline-block;
+    }
+}

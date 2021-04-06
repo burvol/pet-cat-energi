@@ -1,0 +1,182 @@
+.programs {
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    &__item {
+        padding: 30px 20px 18px;
+        background-color: #F2F2F2;
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .program {
+        &__title {
+            padding-left: 70px;
+        }
+        &__title {
+            position: relative;
+            font-size: 24px;
+            line-height: 37px;
+            text-transform: uppercase;
+            font-weight: normal;
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                content: '';
+                width: 50px;
+                height: 50px;
+                background-color: $basic_green;
+                border-radius: 50%;
+            }
+        }
+        &__title--slim {
+            &::after {
+                position: absolute;
+                top: -9px;
+                left: 7px;
+                width: 36px;
+                height: 50px;
+                content: '';
+                display: inline-block;
+                background: url('../img/icon-cat-slim.svg') center center/cover no-repeat;
+            }
+        }
+        &__title--pro {
+            &::after {
+                position: absolute;
+                top: 6px;
+                left: -10px;
+                width: 67px;
+                height: 28px;
+                content: '';
+                display: inline-block;
+                background: url('../img/icon-cat-pro.svg') center center/cover no-repeat;
+            }
+        }
+        &__text {
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: #444444;
+            margin-top: 29px;
+            border-bottom: 1px solid #D9D9D9;
+            padding-bottom: 23px;
+        }
+        &__link {
+            margin-top: 19px;
+        }
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .programs {
+        .program {
+            padding: 77px 275px 56px 52px;
+            &__title {
+                padding-left: 0;
+                font-size: 36px;
+                line-height: 36px;
+                &::before {
+                    top: 111px;
+                    right: -218px;
+                    left: auto;
+                    transform: translateY(-50%);
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            &__text {
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 24px;
+                border: none;
+                padding-bottom: 0;
+            }
+            &__link {
+                margin-top: 48px;
+            }
+            &__title--slim {
+                &::after {
+                    top: 0px;
+                    width: 140px;
+                    height: 192px;
+                    left: auto;
+                    right: -190px;
+                }
+            }
+            &__title--pro {
+                &::after {
+                    top: 62px;
+                    left: auto;
+                    right: -240px;
+                    width: 268px;
+                    height: 112px;
+                }
+            }
+        }
+    }    
+}
+
+@media (min-width: $desktop-width) {
+    .programs {
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 80px;
+            row-gap: 60px;
+        }
+        &__item:not(:last-child) {
+            margin-bottom: 0;
+        }
+        .program {
+            padding: 77px 61px 56px 52px;
+            &__title {
+                padding-left: 180px;
+                &::before {
+                    top: 50%;
+                    right: auto;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            &__text {
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 73px;
+                border: none;
+                padding-bottom: 0;
+            }
+            &__link {
+                margin-top: 23px;
+                font-size: 20px;
+                line-height: 30px;
+            }
+            &__title--slim {
+                &::after {
+                    top: -36px;
+                    width: 70px;
+                    height: 97px;
+                    left: 17px;
+                    right: auto;
+                }
+            }
+            &__title--pro {
+                &::after {
+                    top: -6px;
+                    left: -21px;
+                    right: auto;
+                    width: 134px;
+                    height: 56px;
+                }
+            }
+        }
+    }
+}
